@@ -1,4 +1,4 @@
-# Fellfarben-Rechner
+# Fellfarben-Galerie
 ## [DEMO-LINK](https://lisa-pan.github.io/color-gallery/)
 Dies ist eine einfache Galerie, die ich erstellt habe, um die verschiedenen Fellfarben und -zeichnungen von Hunden zu zeigen und
 deren genetische Grundlagen zu erklären. Sie wurde zunächst als statische Website mit HTML und CSS erstellt, und dann mit
