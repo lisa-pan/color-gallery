@@ -49,7 +49,10 @@ if (currentSlideIndex < Object.keys(dogObj).filter(function(key) {
 Es werden alle keys gefiltert, die mit 'img' anfangen ('img1', 'img2', und so weiter) und die Anzahl dann mit dem currentSlideIndex verglichen.
 
 ## Bekannte Probleme
-Ich hab für die Bilder-Slideshow zuerst die .removeChild() Methode benutzt um das alte Bild zu entfernen bevor das neue Bild geladen wird. Das hat manchmal nicht funktioniert, bzw. erst nach 
+1. Ich arbeite im Moment noch am responsiven Design. Da gibt es noch einige Probleme, die ich jetzt nach und nach beheben will (auf kleinen Screens: image credits falsch positioniert, Bild im modalen Fenster
+zu groß wenn man den Screen rotiert, etc.)
+
+2. Ich hab für die Bilder-Slideshow zuerst die .removeChild() Methode benutzt um das alte Bild zu entfernen bevor das neue Bild geladen wird. Das hat manchmal nicht funktioniert, bzw. erst nach 
 Aktualisieren der Seite. 
 ```
  const oldImg = modalImgContainer.querySelector('.modal-img');
