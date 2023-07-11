@@ -2,7 +2,7 @@
 
 const accordion = document.getElementsByClassName('accordion');
 const modalContainer = document.getElementById('modal-container');
-const modalContent = document.getElementById('modal-content');
+const modalImgContainer = document.getElementById('modal-img-container');
 const modalText = document.getElementById('modal-text');
 const closeBtn = document.getElementById('close-btn');
 const dogImg = document.querySelectorAll('.dog-img');
@@ -32,9 +32,10 @@ function showModal(e){
   currentSlideIndex = 1;
   const imgElem = document.createElement('img');
 
+  modalImgContainer.innerHTML = ''; // altes Bild entfernen
   imgElem.src = imageSrc;
   imgElem.classList.add('modal-img');
-  modalContent.appendChild(imgElem);
+  modalImgContainer.appendChild(imgElem);
   modalContainer.classList.add('show-modal');
 
   const textObj = imgTextMap[dogId];
@@ -61,7 +62,7 @@ function showPrevSlide () {
     return;
   } else {
     currentSlideIndex--;
-    updateModalContent();
+    updatemodalImgContainer();
   }
 }
 
@@ -71,7 +72,7 @@ function showNextSlide () {
     return key.startsWith('img');
   }).length) {
     currentSlideIndex++;
-    updateModalContent();
+    updatemodalImgContainer();
   } else {
     return;
   }
@@ -79,23 +80,25 @@ function showNextSlide () {
   /* Die Funktion schaut erstmal welche Bilder und Slides zu der geklickten dogId gehören und speichert das in dogObj. Dann wird gezählt, wie viele Bilder in diesem dogObj sind. Object.keys(dogObj).filter (...) filtert alle keys die mit 'img' anfangen und zählt diese (.length)
   */
 
-function updateModalContent(){
+function updatemodalImgContainer(){
   
   const imgKey = `img${currentSlideIndex}`
   const textKey = `slide${currentSlideIndex}`;
   const dogObj = imgTextMap[dogId];
 
  // altes Bild entfernen 
-  const oldImg = modalContent.querySelector('.modal-img');
+  const oldImg = modalImgContainer.querySelector('.modal-img');
   if (oldImg) {
-    modalContent.removeChild(oldImg);
+    modalImgContainer.innerHTML = '';
+    //modalImgContainer.removeChild(oldImg); 
   }
+  /*aus irgendeinem Grund hat die alte Funktion nicht funktioniert, ich machs jetzt mit .innerHTML*/
   
   // neues Bild
   const imgElem = document.createElement('img');
   imgElem.src = dogObj[imgKey];
   imgElem.classList.add('modal-img');
-  modalContent.appendChild(imgElem);
+  modalImgContainer.appendChild(imgElem);
   modalText.innerHTML = dogObj[textKey];
 
   disableButtons();
