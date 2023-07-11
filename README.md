@@ -22,6 +22,7 @@ Beispiele der (genetisch) gleichen Fellfarbe angezeigt werden. So kann man versc
 ### Akkordeon
 Im Header der Website befindet sich ein Akkordeon, das grundlegendes Wissen über die Fellfarbgenetik bei Hunden enthält. Durch Klicken auf die Überschrift
 "Grundwissen: Fellfarbgenetik bei Hunden" wird dieser Bereich erweitert und zusätzliche Informationen werden angezeigt. 
+Das will ich in der nächsten Version noch erweitern und responsiv machen.
 
 ## Herausforderungen 
 Obwohl das Projekt recht einfach ist, bin ich trotzdem öfter auf Herausforderungen gestoßen, vor allem in Bezug auf das CSS-Styling. Aber auch beim Schreiben
@@ -48,8 +49,15 @@ if (currentSlideIndex < Object.keys(dogObj).filter(function(key) {
 Es werden alle keys gefiltert, die mit 'img' anfangen ('img1', 'img2', und so weiter) und die Anzahl dann mit dem currentSlideIndex verglichen.
 
 ## Bekannte Probleme
-Manchmal wird bei der Bilder-Slideshow das alte Bild nicht entfernt, bevor das Neue geladen wird. Bei Bildern unterschiedliche Größe sieht man dann leider
-das alte Bild noch darunter. Ich arbeite noch an einer Lösung.
+Ich hab für die Bilder-Slideshow zuerst die .removeChild() Methode benutzt um das alte Bild zu entfernen bevor das neue Bild geladen wird. Das hat manchmal nicht funktioniert, bzw. erst nach 
+Aktualisieren der Seite. 
+```
+ const oldImg = modalImgContainer.querySelector('.modal-img');
+  if (oldImg) {
+    modalImgContainer.removeChild(oldImg); 
+  }
+```
+Ich weiß nicht wo der Fehler lag oder wie ich das lösen kann, aber jetzt entferne ich das alte Bild erstmal mit modalImgContainer.innerHTML = '' bis ich eine bessere Lösung finde.
 
-Das Layout ist außerdem nicht responsiv, auf kleineren Geräten ist es daher noch nicht benutzbar. Das will ich in der nächsten Version aber hinzufügen.
+
   
