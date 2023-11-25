@@ -17,6 +17,25 @@ body {
   z-index: 99;
 }
 
+.accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-box {
+  padding: 25px;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: relative; 
+  border-radius: 3px;
+  line-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .header-title {
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -38,8 +57,8 @@ body {
   transition: .5s;
 }
 
-.accordion.active .header-info {
-  height: 200px;
+.header-box.active .header-info {
+  height: 150px;
 }
 
 .background-overlay {
@@ -53,16 +72,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.4; 
-}
-
-.header-box {
-  padding: 25px;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  position: relative; 
-  border-radius: 3px;
-  line-height: 20px;
 }
 
 .grid-container {
