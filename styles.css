@@ -59,6 +59,7 @@ body {
 
 .header-box.active .header-info {
   height: 150px;
+  overflow: scroll;
 }
 
 .background-overlay {
@@ -188,12 +189,6 @@ body {
   overflow: auto;
 }
 
-.credits {
-  text-align: end;
-  position: absolute;
-  bottom: 0;
-}
-
 footer {
   margin-top: 20px;
   font-size: 14px;
@@ -223,13 +218,7 @@ footer {
   }
 }
 
-@media (max-width: 700px) {
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
